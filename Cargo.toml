@@ -1,0 +1,16 @@
+[package]
+name = "zimg"
+version = "0.1.0"
+authors = ["Luca Barbato <lu_zero@gentoo.org>"]
+license = "MIT"
+description = "zimg/z.lib bindings"
+repository = "https://github.com/rust-av/zimg-rs"
+readme = "README.md"
+keywords = ["color conversion", "rescale","zimg"]
+
+[dependencies]
+zimg-sys = { version = "0.1.0", path = "zimg-sys" }
+av-data = { version = "0.1.0", git = "https://github.com/rust-av/rust-av" }
+
+[workspace]
+members = ["zimg-sys"]
