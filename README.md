@@ -1,6 +1,7 @@
 # zimg bindings
 
 [![LICENSE](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Actions Status](https://github.com/rust-av/zimg-rs/workflows/zimg/badge.svg)](https://github.com/rust-av/zimg-rs/actions)
 
 It is a simple [binding][1] and safe abstraction over [zimg][2].
 
