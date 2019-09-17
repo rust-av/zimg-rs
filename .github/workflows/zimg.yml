@@ -1,0 +1,26 @@
+name: zimg
+
+on: [push, pull_request]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Install nasm
+      run: |
+        sudo apt-get install nasm
+    - name: Install zimg
+      run: |
+        git clone --depth 1 https://github.com/sekrit-twc/zimg.git
+        cd zimg
+        ./autogen.sh
+        ./configure --prefix=$HOME/zimg_dir
+        make
+        make install
+    - name: Run tests
+      run: |
+        export PKG_CONFIG_PATH=$HOME/zimg_dir/lib/pkgconfig:$PKG_CONFIG_PATH
+        cargo test --all-features --verbose
