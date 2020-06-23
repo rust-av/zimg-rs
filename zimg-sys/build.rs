@@ -1,5 +1,5 @@
 extern crate bindgen;
-extern crate metadeps;
+extern crate system_deps;
 
 use std::fs::OpenOptions;
 use std::io::Write;
@@ -31,7 +31,7 @@ fn common_builder() -> bindgen::Builder {
 }
 
 fn main() {
-    let libs = metadeps::probe().unwrap();
+    let libs = system_deps::Config::new().probe().unwrap();
     let headers = libs.get("zimg").unwrap().include_paths.clone();
 
     let mut builder = common_builder().header("data/zimg.h");
