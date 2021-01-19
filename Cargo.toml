@@ -10,7 +10,7 @@ keywords = ["color conversion", "rescale","zimg"]
 
 [dependencies]
 zimg-sys = { path = "zimg-sys" }
-av-data = "0.2.0"
+av-data = "0.3.0"
 
 [workspace]
 members = ["zimg-sys"]
